@@ -34,8 +34,7 @@ while True:
     
     velocidade = float(input("\nIntroduza a velocidade a que circulava o veículo: ").strip())
     
-    if velocidade < 50:
-        print("\nNão há multa a pagar.")
+    if velocidade < 50: print("\nNão há multa a pagar.")
     else:
         match loc:
             case 1: multa = vel_localidade(velocidade)
@@ -48,7 +47,5 @@ while True:
         match continuar:
             case "S":break
             case "N":break
-            case _:
-                print("\nErro! Input inválido!")
-    if continuar == "N":
-        break
+            case _: print("\nErro! Input inválido!")
+    if continuar == "N": break
