@@ -44,7 +44,7 @@ while True:
         print(f"\nA multa a pagar é de {multa}€")
     
     while True:
-        continuar = input("\nDeseja continuar? [S/N]\n> ").strip()
+        continuar = input("\nDeseja continuar? [S/N]\n> ").strip().capitalize()
         match continuar:
             case "S":break
             case "N":break
