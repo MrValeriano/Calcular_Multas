@@ -1,18 +1,5 @@
 import os
-'''
-1. Se o carro circular a menos de 50km/h, não tem multa a pagar.
-2. Se circular na localidade:
-    a. > 50 km/h multa de 60€
-    b. >= 90 km/h multa de 120€
-    c. >= 120 km/h muta de 320€
-3. Se circular na estrada fora da localidade:
-    a. > 90 km/h multa de 60€
-    b. >= 120 km/h multa de 120€
-4. Se circular na auto estrada:
-    a. > 120 km/h multa de 60€
-    b. > 150 km/h multa de 120€
-    c. >175 km/h multa de 360€
-'''
+
 def vel_localidade(vel:float):
     if vel >= 120: return 320
     elif vel >= 90: return 120
@@ -45,7 +32,7 @@ while True:
         print("\nErro! Seleção fora das opções apresentadas!")
         continue
     
-    velocidade = float(input("\nIntroduza a velocidade a que circulava o veículo").strip())
+    velocidade = float(input("\nIntroduza a velocidade a que circulava o veículo: ").strip())
     
     if velocidade < 50:
         print("\nNão há multa a pagar.")
@@ -55,3 +42,13 @@ while True:
             case 2: multa = vel_fora_localidade(velocidade)
             case 3: multa = vel_autoestrada(velocidade)
         print(f"\nA multa a pagar é de {multa}€")
+    
+    while True:
+        continuar = input("\nDeseja continuar? [S/N]\n> ").strip()
+        match continuar:
+            case "S":break
+            case "N":break
+            case _:
+                print("\nErro! Input inválido!")
+    if continuar == "N":
+        break
